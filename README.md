@@ -1,10 +1,23 @@
-Mark Roberts: Homework 4: Frequentist Approach
-==============================================
+Document Classification using Term Frequency--Inverse Document Frequency
+========================================================================
 
-Preprocessing
--------------
+This is a document classifier which parses a selection of Alexander Hamilton's and James
+Madison's contributions to the Federalist Papers, in order to determine the authorship of eleven
+disputed documents.
 
-We do all of the following in order to reduce the number of non-essential variables ultimately observed by our classifier.
+Roughly, the idea is to take all the documents of known authorship and to generate a signature for
+them based on the ${lt*idf}$ of each term in the corpus. Then, for each document of unknown
+authorship, we want to compare the frequency of terms appearing in said document against the
+signatures we know. We expect the signature which aligns the closest with a document to indicate
+the authorship of said document.
+
+Implementation
+--------------
+
+### Preprocessing
+
+We do all of the following in order to reduce the number of non-essential variables ultimately
+observed by our classifier.
 
 1. Lowercase all letters
 
@@ -13,24 +26,13 @@ We do all of the following in order to reduce the number of non-essential variab
 
 3. Consider all pluralized words equivalent, according to
    [English pluralization rules](http://en.wikipedia.org/wiki/English_plural)
- * This removes 436 words from our final, observed corpus
 
 4. Remove all stop words as defined
    [here](http://www.textfixer.com/resources/common-english-words.txt)
- * This removes 112 words from our final, observed corpus
 
-Cross-validation
-----------------
+### Process
 
-Our cross-validation suite uses the method suggested in the handout: we remove one training
-example and add it to the test list for each validation. Additionally, we shuffle the tests for
-each subsequent validation, and we average multiple runs.
-
-Process
--------
-
-The program is invoked with `runhaskell Main.hs`, or via the helper script `run.sh`. Upon
-execution, the program:
+The program is invoked with `runhaskell Main.hs`. Upon execution, the program:
 
 1. Groups all documents in `federalist' by author into three groups (according to filename)
 2. Preprocesses and prints the number of unique words found for each document (according to
@@ -46,6 +48,17 @@ execution, the program:
 6. Calculate the likelihood that each of the unknown texts is either Hamilton or Madison, printing
    the classifications and likelihoods as it processes
 
-The comments in my code explain the functioning of these parts
+The comments in the code explain the functioning of these parts.
 
---Mark
+Results
+-------
+
+The algorithm attributes each of the unknown documents to Alexander Hamilton. This is consistent
+statistical analysis of the Federalist Papers.
+
+Todo
+----
+
+* Implement cross-validation to ensure that some fluke is not responsible for our attribution of
+	every document to Hamilton
+* Add other test data
