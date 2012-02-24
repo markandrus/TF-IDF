@@ -16,8 +16,8 @@ Implementation
 
 ### Preprocessing
 
-We do all of the following in order to reduce the number of non-essential variables ultimately
-observed by our classifier.
+The application does all of the following in order to reduce the number of non-essential variables
+ultimately observed by our classifier.
 
 1. Lowercase all letters
 
@@ -32,7 +32,8 @@ observed by our classifier.
 
 ### Process
 
-The program is invoked with `runhaskell Main.hs`. Upon execution, the program:
+The program is invoked with `runhaskell Main.hs`, or you can build it with `ghc -O2 Main.hs`. Upon
+execution, the program:
 
 1. Groups all documents in `federalist' by author into three groups (according to filename)
 2. Preprocesses and prints the number of unique words found for each document (according to
