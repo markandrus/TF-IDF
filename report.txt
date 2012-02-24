@@ -1,0 +1,78 @@
+Analysis of unknown documents
+  File: unknown1.txt
+      Author: madison
+        Difference: -0.7702693
+      Author: hamilton
+        Difference: -0.7211522
+   Chose: madison
+
+  File: unknown10.txt
+      Author: madison
+        Difference: -0.67634106
+      Author: hamilton
+        Difference: -0.6496604
+   Chose: madison
+
+  File: unknown11.txt
+      Author: madison
+        Difference: -0.6583116
+      Author: hamilton
+        Difference: -0.59499526
+   Chose: madison
+
+  File: unknown2.txt
+      Author: madison
+        Difference: -0.7304667
+      Author: hamilton
+        Difference: -0.72518176
+   Chose: madison
+
+  File: unknown3.txt
+      Author: madison
+        Difference: -0.7951477
+      Author: hamilton
+        Difference: -0.74159396
+   Chose: madison
+
+  File: unknown4.txt
+      Author: madison
+        Difference: -0.73866445
+      Author: hamilton
+        Difference: -0.72580904
+   Chose: madison
+
+  File: unknown5.txt
+      Author: madison
+        Difference: -0.72678375
+      Author: hamilton
+        Difference: -0.68569595
+   Chose: madison
+
+  File: unknown6.txt
+      Author: madison
+        Difference: -0.7618333
+      Author: hamilton
+        Difference: -0.7225698
+   Chose: madison
+
+  File: unknown7.txt
+      Author: madison
+        Difference: -0.73160315
+      Author: hamilton
+        Difference: -0.67891717
+   Chose: madison
+
+  File: unknown8.txt
+      Author: madison
+        Difference: -0.77707916
+      Author: hamilton
+        Difference: -0.75940895
+   Chose: madison
+
+  File: unknown9.txt
+      Author: madison
+        Difference: -0.7231209
+      Author: hamilton
+        Difference: -0.6824411
+   Chose: madison
+
