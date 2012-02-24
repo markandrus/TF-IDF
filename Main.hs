@@ -134,7 +134,7 @@ main = do
 
   forM_ authorTFIDFs (\(author, tfidf) -> do
       hPrintf stderr "TFIDF for Author: %s\n" author
-      forM_ (sortBy (comparing snd) tfidf) (\(word, freq) -> do
+      forM_ (sortBy (comparing snd) tfidf) (\(word, freq) ->
           hPrintf stderr "  Frequency: %f  Word: %s\n" freq word
         )
       hPutStrLn stderr ""
@@ -156,7 +156,7 @@ main = do
                       . zip authors
                       $ map (\(author, authorTFIDF) ->
                               foldr (\(word,freq) a ->
-                                      a + (fromJust' $ lookup word authorTFIDF) - freq
+                                      a + fromJust' (lookup word authorTFIDF) - freq
                                     ) 0.0
                               -- NOTE: when using intersectBy, the element from the first list is
                               --       the one retained
@@ -164,8 +164,8 @@ main = do
                                             word `isSameOrPlural` authorWord
                                           ) corpus' authorTFIDF
                             ) known
-      forM_ (differences) (\(author,diff) -> do
-          printf "      Author: %s\n        Difference: %f\n" author diff
+      forM_ differences (
+          uncurry $ printf "      Author: %s\n        Difference: %f\n"
         )
       printf "   Chose: %s\n\n" . fst $ head differences
     )
